@@ -27,15 +27,15 @@ const Songs = () => {
                 <tr className='songListHdg'>
                     <td>Song Title</td>
                     <td>Artist</td>
-                    <td>Favorite?  ("Yes" |  "No") </td> <br/><br/><br/><br/>
+                    <td>Album</td>
+                    <td>Favorites  (<span>⭐️</span>) </td> <br/><br/><br/><br/>
                 </tr> 
-          {songs.map((song, index) => {
-              return <ShowOneSong key={index} song={song} index={index} />;
+          {songs.map((song) => {
+              return <ShowOneSong key={song.id} song={song} />;
             })}
               </tbody>
             </table>
         </section>
-
         </div>
     );
 };
