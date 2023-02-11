@@ -1,11 +1,23 @@
-import { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
 const API = process.env.REACT_APP_API_URL;
 
-function EditSongForm() {
-  let { id } = useParams();
+function NewSongForm() {
   let navigate = useNavigate();
+
+  const addSong = (newSong) => {
+    axios
+      .post(`${API}/songs`, newSong)
+      .then(
+        () => {
+          navigate(`/songs`);
+        },
+        (error) => console.error(error)
+      )
+      .catch((c) => console.warn('catch', c));
+  };
 
   const [song, setSong] = useState({
     name: '',
@@ -15,18 +27,6 @@ function EditSongForm() {
     is_favorite: false
   });
 
-  const updateSong = (updatedSong) => {
-    axios
-      .put(`${API}/songs/${id}`, updatedSong)
-      .then(
-        () => {
-          navigate(`/songs/${id}`);
-        },
-        (error) => console.error(error)
-      )
-      .catch((c) => console.warn('catch', c));
-  };
-
   const handleTextChange = (event) => {
     setSong({ ...song, [event.target.id]: event.target.value });
   };
@@ -35,25 +35,12 @@ function EditSongForm() {
     setSong({ ...song, is_favorite: !song.is_favorite });
   };
 
-  useEffect(() => {
-    axios.get(`${API}/songs/${id}`).then(
-      (response) => setSong(response.data),
-      
-
-      (error) => navigate(`/not-found`)
-      
-    );
-  }, [id, navigate]);
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    updateSong(song, id);
-    
+    addSong(song);
   };
-
-  
   return (
-    <div className="Edit">
+    <div className="New">
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
@@ -61,7 +48,7 @@ function EditSongForm() {
           value={song.name}
           type="text"
           onChange={handleTextChange}
-          placeholder="Name of song"
+          placeholder="Enter name of song"
           required
         />
         <label htmlFor="artist">Artist:</label>
@@ -70,7 +57,7 @@ function EditSongForm() {
           type="text"
           required
           value={song.artist}
-          placeholder="enter name of artist"
+          placeholder="Enter name of artist"
           onChange={handleTextChange}
         />
         <label htmlFor="album">Album:</label>
@@ -79,20 +66,18 @@ function EditSongForm() {
           type="text"
           name="album"
           value={song.album}
-          placeholder="name of album"
+          placeholder="Enter name of album"
           onChange={handleTextChange}
         />
-
         <label htmlFor="time">Time:</label>
         <input
           id="time"
           type="text"
           name="time"
           value={song.time}
-          placeholder="enter length of time"
+          placeholder="Enter length of time"
           onChange={handleTextChange}
-        />      
-
+        />
         <label htmlFor="is_favorite">Favorite:</label>
         <input
           id="is_favorite"
@@ -102,15 +87,10 @@ function EditSongForm() {
         />
 
         <br />
-
         <input type="submit" />
       </form>
-      <Link to={`/songs/${id}`}>
-        <button>Nevermind!</button>
-      </Link>
     </div>
   );
 }
 
-
-export default EditSongForm;
+export default NewSongForm;

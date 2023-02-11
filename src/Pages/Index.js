@@ -1,12 +1,13 @@
+
 import Songs from '../Components/Songs';
 
-function SongsIndex() {
+function Index() {
   return (
     <div className="Index">
-      <h2>Index of Songs</h2>
+      <h2>Index</h2>
       <Songs />
     </div>
   );
 }
 
-export default SongsIndex;
+export default Index;

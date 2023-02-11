@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from "axios" 
 import { useEffect, useState } from 'react';
+import Artist from "./Artist";
 
 
 const API = process.env.REACT_APP_API_URL
@@ -10,7 +11,8 @@ function Artists() {
 const[artists, setArtists] = useState([])  //declare state to hold data about Artists that is retrieved from the backend - sql database
 
 useEffect(()=>{ 
-    axios.get(`${API}/artists`)//getting response back from API
+    axios
+    .get(`${API}/artists`)//getting response back from API
     .then(res => {
         console.log(res.data)
         setArtists(res.data)})  //store response into the state to update Artists 
@@ -22,21 +24,14 @@ useEffect(()=>{
     return (
         <div>
             <h1>Artists</h1>
-        {
+            {
             artists.map((artist) => { 
-              return<div key = {artist.id}>   
-              {/* key helps React distinguish identical components if rendering multiple ones */}
-              <p>Artist: {artist.name}</p>
-              <p>Album: {artist.album}</p>
-
-              </div> 
-
-})
-        //    don't need the curly braces in the map since only returning one div
-
-        }
+              return<Artist key={artist.id} artist={artist} />;
+              })}
         </div>
     );
 }
 
 export default Artists;
+
+// don't need the curly braces in the map since only returning one div  

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams, useNavigate } from "react-router-dom";
+//import Reviews from "./Reviews";
 const API = process.env.REACT_APP_API_URL;
 
 function SongDetails() {
@@ -26,19 +27,17 @@ const handleDelete = () => {
 };
 
 
- useEffect(() => {
+useEffect(() => {
   axios
   .get(`${API}/songs/${id}`)
   .then((response) => {
-    console.log(response.data);
+    console.log("response data - frontend= ",response.data);
     setSong(response.data);
   })
   .catch((c) => {
     console.warn("catch", c);
   });
-  }, [id], API);  
- 
-  
+  }, [id, API]);
 
   return (
     <article className="showSongDetails">
