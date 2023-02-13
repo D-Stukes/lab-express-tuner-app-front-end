@@ -14,8 +14,9 @@ function Songs() {
   }, []);
   return (
     <div className="songs">
-      <section className="songsIndex">
-        <table>
+     
+      <section className="songsIndex"> <br/> <br/>
+        <table className="songsTable">
           <tbody>
             {songs.map((song) => {
               return <Song key={song.id} song={song} />;

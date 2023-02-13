@@ -55,6 +55,7 @@ function EditSongForm() {
   return (
     <div className="Edit">
       <form  className='editForm' onSubmit={handleSubmit}>
+        <br/>
         <label htmlFor="name">Name:</label>
         <input
           id="name"
@@ -63,7 +64,7 @@ function EditSongForm() {
           onChange={handleTextChange}
           placeholder="Name of song"
           required
-        />
+        /><br/><br/>
         <label htmlFor="artist">Artist:</label>
         <input
           id="artist"
@@ -72,7 +73,7 @@ function EditSongForm() {
           value={song.artist}
           placeholder="enter name of artist"
           onChange={handleTextChange}
-        />
+        /><br/><br/>
         <label htmlFor="album">Album:</label>
         <input
           id="album"
@@ -81,7 +82,7 @@ function EditSongForm() {
           value={song.album}
           placeholder="name of album"
           onChange={handleTextChange}
-        />
+        /><br/><br/>
 
         <label htmlFor="time">Time:</label>
         <input
@@ -91,7 +92,7 @@ function EditSongForm() {
           value={song.time}
           placeholder="enter length of time"
           onChange={handleTextChange}
-        />      
+        />  <br/><br/>    
 
         <label htmlFor="is_favorite">Favorite:</label>
         <input
@@ -101,13 +102,14 @@ function EditSongForm() {
           checked={song.is_favorite}
         />
 
-        <br />
+        <br/><br/>
 
-        <input type="submit" />
-      </form>
-      <Link to={`/songs/${id}`}>
-        <button>Cancel Edit</button>
+        <input type="submit" /> <br/>
+        <Link to={`/songs`}>
+        <button className='cancelEditButton'>Cancel Edit</button>
       </Link>
+      </form>
+     
     </div>
   );
 }

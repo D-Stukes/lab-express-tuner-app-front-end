@@ -19,24 +19,31 @@ nav {
   justify-content: space-around;
   width: 50%;
 }
-.NewSongButton, .newSongLink{
-  color: black;
-  font-size: 1.3em;
+a.homeLink{
+  font-weight: bold;
+  font-size: 1.6em;
+  color: antiquewhite;
 }
 
-.songsLink{
+/* button a { color: antiquewhite; } */
+
+button a, .NewSongButton{
+  color: black;
+  font-weight: bold;
+  font-size: 1.3em;
+  background-color: antiquewhite;
+}
+
+ .songsLinkHdg{
   font-size: 1.5em;
   background-image: url("./Images/musicSignwithWaterMark.png");
-  border: 1px solid seagreen;
+  border: 1.5px solid rgb(62, 227, 208);
   color: antiquewhite;
   padding: .5em;
   border-radius: 25% 10%;
 }
 
-.homeLink{
-  font-weight: bold;
-  font-size: 1.5em;
-}
+
 
 /* ****************** Home Page ****************** */
 
@@ -44,7 +51,7 @@ nav {
 background-color: rgba(0, 0, 255, 0.475);
 width: 700px;
 height: 160px;
-border: 8px solid rgb(245, 109, 24);
+border: 6px solid rgb(245, 123, 9);
 /* border-radius: 45% 10%;; */
 }
 
@@ -74,10 +81,12 @@ border: 8px solid rgb(245, 109, 24);
 .homePage{
   background-image: url("./Images/femaleGuitarist.png");
   width: 99vw;
-  height: 100vw;
+  height: 180vh;
   background-size:cover;
   margin-left: -5vw ;
 }
+
+/* ****************** New Page ****************** */
 
 .newPage{
   background-image: url("./Images/rockHitsBandLarge.png");
@@ -86,6 +95,89 @@ border: 8px solid rgb(245, 109, 24);
   /* background-size:contain; */
   margin-left: -5vw ;
 }
+
+.newSongFormHdg{
+  text-align: center;
+  width:30vw;
+  color: yellow;
+  font-style:italic ;
+  font-size: 1.8em;
+  /* margin-top: -3vh; */
+  margin-left: 33.6vw;
+  background-color: rgba(6, 104, 104, 0.538);
+}
+.newSongForm{
+  background-color: rgba(12, 12, 107, 0.864);
+  width: 50vw;
+  height: 500px;
+  margin-left: 23vw ;
+  color:rgb(18, 177, 87);
+  padding: .8em;
+  border: 5px solid rgba(72, 245, 14, 0.716);
+}
+
+form.newSongForm label{
+  font-size: 1.3em;
+  color: yellow;
+  font-weight:400;
+}
+
+form.newSongForm input{
+  width: 26vw;
+  height: 3vh;
+  margin-top: -2.4vh;
+  font-weight: bold;
+}
+
+form.newSongForm input#name:hover{
+  background-color: rgb(245, 151, 50);
+}
+form.newSongForm input#artist:hover{
+  background-color: rgb(244, 253, 77);
+}
+form.newSongForm input#album:hover{
+  background-color: rgb(249, 101, 214);
+}
+form.newSongForm input#time:hover{
+  background-color: rgb(57, 232, 98);
+}
+form.newSongForm input#is_favorite[type="checkbox"]:hover{
+  background-color: rgb(129, 222, 237);
+}
+
+form.newSongForm input[type="submit"]{
+  width: 14vw;
+  height: 3.3vh;
+  margin-top: -2.4vh;
+  background-color: yellow;
+  color:black;
+  font-weight: bold;
+}
+.cancelNewButton{
+  width: 14vw;
+  height: 3.3vh;
+  margin-top: -2.4vh;
+  background-color: rgb(239, 93, 159);
+  color:black;
+  font-weight: bold;
+  margin-left: 18vw;
+}
+.cancelNewButton:hover{
+background-color: maroon;
+color: yellow;
+}
+
+form.newSongForm input[type="submit"]:hover{
+  width: 14vw;
+  height: 3.3vh;
+  margin-top: -2.4vh;
+  background-color: green;
+  color:yellow;
+  font-weight: bold;
+}
+
+
+/* ****************** Index Page ****************** */
 
 .indexPage{
   background-image: url("./Images/michaelJacksonArtsy2.png");
@@ -96,14 +188,208 @@ border: 8px solid rgb(245, 109, 24);
 }
 
 .songsIndex{
-  background-color: rgba(189, 29, 29, 0.564) ;
-  width: 50vw;
-  height: 40vw;
+  background-color: rgba(170, 13, 13, 0.564) ;
+  width: 40vw;
+  height: 65vh;
   background-size:cover;
   font-size: 1.5em;
   color: #0f0638;
   border: 10px solid blue;
 }
+
+.songEditIcon{
+  font-size: 1.5em;
+}
+
+.songsTable{
+  background-color: rgba(232, 34, 189, 0.584);
+  width: 27vw;
+  height: 25vw;
+  border: 3px solid goldenrod
+}
+
+
+/* ****************** Show Page, Song Details ****************** */
+
+.showPage{
+  background-image: url("./Images/heartsAndMusic.png");
+  width: 99vw;
+  height: 90vh;
+  background-size:cover;
+  margin-left: -5vw ;
+  background-color: rgba(113, 0, 128, 0.652);
+  text-align: center;
+  color: yellow;
+  font-style:italic ;
+  font-size: 1.5em;
+  margin-top: -3vh;
+}
+.showPageHdg{
+  background-color: rgb(206 156 249 / 61%);
+  width: 29vw;
+  margin-left: 34vw;
+
+}
+
+
+.songDetails{
+  background-color: rgba(0, 0, 128, 0.652);
+  width: 50vw;
+  height: 65vh;
+  margin-left: 22vw ;
+  color:gold;
+  padding: .8em;
+  border: 5px solid rgba(72, 245, 14, 0.716);
+}
+
+.songDetailsEditButton{
+  width: 14vw;
+  height: 3.3vh;
+  margin-top: -2.4vh;
+  background-color: rgb(6, 245, 110);
+  color: rgb(2, 12, 49);
+  font-weight: bold;
+  margin-left: 1vw;
+}
+
+.songDetailsDeleteButton{
+  width: 14vw;
+  height: 3.3vh;
+  margin-top: -2.4vh;
+  background-color: rgb(217, 6, 245);
+  color: rgb(2, 12, 49);
+  font-weight: bold;
+  margin-left: 1vw;
+}
+
+.songDetailsBackButton{
+  width: 14vw;
+  height: 3.3vh;
+  margin-top: -2.4vh;
+  background-color: rgb(129, 6, 245);
+  color: rgb(166, 182, 238);
+  font-weight: bold;
+  margin-left: 1vw;
+}
+
+.songDetailsEditButton:hover{
+  width: 14vw;
+  height: 3.3vh;
+  margin-top: -2.4vh;
+  background-color: rgb(229, 245, 9);
+  color: rgb(3, 66, 18);
+  font-weight: bold;
+  margin-left: 1vw;
+}
+.songDetailsDeleteButton:hover{
+  width: 14vw;
+  height: 3.3vh;
+  margin-top: -2.4vh;
+  background-color: rgb(9, 225, 245);
+  color: rgb(3, 66, 18);
+  font-weight: bold;
+  margin-left: 1vw;
+}
+.songDetailsBackButton:hover{
+  width: 14vw;
+  height: 3.3vh;
+  margin-top: -2.4vh;
+  background-color: rgb(245, 151, 9);
+  color: rgb(3, 66, 18);
+  font-weight: bold;
+  margin-left: 1vw;
+}
+
+/* ****************** Edit Page ****************** */
+
+.editPage{
+  background-image: url("./Images/heartsAndMusic.png");
+  width: 99vw;
+  height: 100vw;
+  background-size:contain;
+  margin-left: -5vw ;
+}
+
+.editForm{
+  background-color: rgba(139, 12, 148, 0.892);
+  width: 50vw;
+  height: 500px;
+  margin-left: 23vw ;
+  color:rgb(18, 177, 87);
+  padding: .8em;
+  border: 5px solid rgba(72, 245, 14, 0.716);
+}
+
+form.editForm input{
+  width: 26vw;
+  height: 3vh;
+  margin-top: -2.4vh;
+  font-weight: bold;
+}
+
+
+form.editForm label{
+  font-size: 1.3em;
+  color:  rgb(0, 195, 255);
+  font-weight:400;
+}
+
+form.editForm input{
+  width: 26vw;
+  height: 3vh;
+  margin-top: -2.4vh;
+  font-weight: bold;
+}
+
+form.editForm input#name:hover{
+  background-color: rgb(245, 151, 50);
+}
+form.editForm input#artist:hover{
+  background-color: rgb(244, 253, 77);
+}
+form.editForm input#album:hover{
+  background-color: rgb(249, 101, 214);
+}
+form.editForm input#time:hover{
+  background-color: rgb(57, 232, 98);
+}
+form.editForm input#is_favorite[type="checkbox"]:hover{
+  background-color: rgb(129, 222, 237);
+}
+
+form.editForm input[type="submit"]{
+  width: 14vw;
+  height: 3.3vh;
+  margin-top: -2.4vh;
+  background-color: rgb(0, 195, 255);
+  color:navy;
+  font-weight: bold;
+}
+.cancelEditButton{
+  width: 14vw;
+  height: 3.3vh;
+  margin-top: -2.4vh;
+  background-color: rgb(7, 4, 98);
+  color: white;
+  font-weight: bold;
+  margin-left: 18vw;
+}
+.cancelEditButton:hover{
+background-color: gold;
+color: rgb(0, 38, 255);
+}
+
+form.editForm input[type="submit"]:hover{
+  width: 14vw;
+  height: 3.3vh;
+  margin-top: -2.4vh;
+  background-color: rgb(236, 10, 244);
+  color:white;
+  font-weight: bold;
+}
+
+
+/* ********* Additional various CSS - input buttons, etc. ****** */
 
 main {
   width: 90%;
@@ -114,9 +400,7 @@ a {
   text-decoration: none;
   color: #cac4ce;
 }
-button a {
-  color: antiquewhite;
-}
+
 
 h4 {
   display: flex;

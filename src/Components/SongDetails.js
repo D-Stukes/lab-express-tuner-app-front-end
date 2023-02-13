@@ -40,7 +40,7 @@ useEffect(() => {
   }, [id, API]);
 
   return (
-    <article className="showSongDetails">
+    <article className="songDetails">
     <h3>
         {song.is_favorite ? <span>⭐️</span> : null} {song.name}
     </h3>
@@ -53,13 +53,13 @@ useEffect(() => {
     <div className="songNavButtons">
         <div>
           {" "}
-          <Link to={`/songs`}><button>Back</button></Link>
+          <Link to={`/songs`}><button className="songDetailsBackButton">Back</button></Link>
         </div>
         <div>
-          <Link to={`/songs/${id}/edit`}> <button>Edit</button></Link>
+          <Link to={`/songs/${id}/edit`}> <button className="songDetailsEditButton">Edit</button></Link>
         </div>
         <div>
-         <button onClick={handleDelete}>Delete</button>
+         <button className="songDetailsDeleteButton" onClick={handleDelete} >Delete</button>
         </div>
     </div>
   </article>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -40,8 +41,9 @@ function NewSongForm() {
     addSong(song);
   };
   return (
-    <div className="New">
-      <form onSubmit={handleSubmit}>
+    <div className="new">
+      <form className="newSongForm"   onSubmit={handleSubmit}>
+        <br/><br/>
         <label htmlFor="name">Name:</label>
         <input
           id="name"
@@ -50,7 +52,7 @@ function NewSongForm() {
           onChange={handleTextChange}
           placeholder="Enter name of song"
           required
-        />
+        /><br/><br/>
         <label htmlFor="artist">Artist:</label>
         <input
           id="artist"
@@ -59,7 +61,7 @@ function NewSongForm() {
           value={song.artist}
           placeholder="Enter name of artist"
           onChange={handleTextChange}
-        />
+        /><br/><br/>
         <label htmlFor="album">Album:</label>
         <input
           id="album"
@@ -68,7 +70,7 @@ function NewSongForm() {
           value={song.album}
           placeholder="Enter name of album"
           onChange={handleTextChange}
-        />
+        /><br/><br/>
         <label htmlFor="time">Time:</label>
         <input
           id="time"
@@ -77,8 +79,9 @@ function NewSongForm() {
           value={song.time}
           placeholder="Enter length of time"
           onChange={handleTextChange}
-        />
+        /><br/><br/>
         <label htmlFor="is_favorite">Favorite:</label>
+        <br/>
         <input
           id="is_favorite"
           type="checkbox"
@@ -86,8 +89,12 @@ function NewSongForm() {
           checked={song.is_favorite}
         />
 
-        <br />
+        <br/><br/><br/>
         <input type="submit" />
+        <br/><br/>
+        <Link to={`/songs/`}>
+        <button className='cancelNewButton'>Cancel</button>
+      </Link>
       </form>
     </div>
   );
