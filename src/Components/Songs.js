@@ -13,16 +13,9 @@ function Songs() {
       .catch((c) => console.warn("catch", c));
   }, []);
   return (
-    <div className="Songs">
-      <section>
+    <div className="songs">
+      <section className="songsIndex">
         <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th>Take me there</th>
-              <th>See this song</th>
-            </tr>
-          </thead>
           <tbody>
             {songs.map((song) => {
               return <Song key={song.id} song={song} />;

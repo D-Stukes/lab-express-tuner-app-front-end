@@ -26,7 +26,8 @@ function Song({ song, handleDelete, handleEdit }) {
         </a>
       </td>
       <td>
-        <Link to={`/songs/${song.id}`}>✏️</Link>
+        {/* <Link to={`/songs/${song.id}`}>✏️</Link> */}
+        <Link to={`/songs/${song.id}`}>🎸</Link>
       </td>
     </tr>
     </div>

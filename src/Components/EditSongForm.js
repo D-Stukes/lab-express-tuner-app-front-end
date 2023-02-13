@@ -54,7 +54,7 @@ function EditSongForm() {
   
   return (
     <div className="Edit">
-      <form onSubmit={handleSubmit}>
+      <form  className='editForm' onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
           id="name"
@@ -106,7 +106,7 @@ function EditSongForm() {
         <input type="submit" />
       </form>
       <Link to={`/songs/${id}`}>
-        <button>Nevermind!</button>
+        <button>Cancel Edit</button>
       </Link>
     </div>
   );

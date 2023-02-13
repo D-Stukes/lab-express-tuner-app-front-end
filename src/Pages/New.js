@@ -2,7 +2,7 @@ import NewSongForm from "../Components/NewSongForm";
 
 function New() {
   return (
-    <div className="New">
+    <div className="newPage">
       <h2>Add a New Song</h2>
       <NewSongForm />
     </div>
